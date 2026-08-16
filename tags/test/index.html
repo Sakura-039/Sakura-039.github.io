@@ -1,5 +1,5 @@
   <!DOCTYPE html>
-  <html lang="en"  data-theme-mode="auto">
+  <html lang="en"  data-theme-mode="true">
   <head>
     <script>
   (function () {
@@ -23,7 +23,7 @@
   
   
   
-  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_ex15nbittbh';window.REIMU_CONFIG.clipboard_tips = {"success":{"en":"Copy successfully (*^▽^*)"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = 'All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!';window.REIMU_CONFIG.outdate = {"enable":true,"daysAgo":180,"message":{"en":"This article was last updated on {time}. Please note that the content may no longer be applicable.","zh-CN":"本文最后更新于 {time}，请注意文中内容可能已不适用。","zh-TW":"本文最後更新於 {time}，請注意文中內容可能已不適用。","ja":"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。","pt-BR":"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável."}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://sakura-039.github.io';window.REIMU_CONFIG.relative = '/';window.REIMU_CONFIG.dark_mode = {"button":true,"mode":"auto"};</script>
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_ex15nbittbh';window.REIMU_CONFIG.clipboard_tips = {"success":{"en":"Copy successfully (*^▽^*)"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = 'All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!';window.REIMU_CONFIG.outdate = {"enable":true,"daysAgo":180,"message":{"en":"This article was last updated on {time}. Please note that the content may no longer be applicable.","zh-CN":"本文最后更新于 {time}，请注意文中内容可能已不适用。","zh-TW":"本文最後更新於 {time}，請注意文中內容可能已不適用。","ja":"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。","pt-BR":"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável."}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://sakura-039.github.io';window.REIMU_CONFIG.relative = '/';window.REIMU_CONFIG.dark_mode = {"button":false,"mode":true};</script>
   <title>
     Tag: test | Sakura&#39;s Universe
   </title>
@@ -70,6 +70,105 @@
     font-weight: 700 !important;
   }
 </style>
+<style>
+  /* ===== theme overhaul ===== */
+  :root {
+    --color-wrap: rgba(0, 0, 0, 0.32);
+    --color-default: #c9cdd4;
+    --color-background: #0b0d12;
+    --color-footer-background: rgba(0, 0, 0, 0.45);
+    --color-mobile-nav-background: rgba(0, 0, 0, 0.88);
+    --color-header-background: rgba(0, 0, 0, 0.6);
+    --color-h2-border: rgba(255, 255, 255, 0.08);
+    --color-hover-shadow: rgba(0, 0, 0, 0.35);
+    --color-code-background: rgba(255, 255, 255, 0.05);
+    --color-archive-year: #9aa0a8;
+    --color-sticky: rgba(57, 197, 187, 0.12);
+    --grey-9: #9aa0a8;
+    --highlight-background: rgba(0, 0, 0, 0.5);
+    --highlight-foreground: #c9d1d9;
+    --highlight-nav: #222830;
+    --highlight-scrollbar: #454d59;
+    --highlight-selection: #51515155;
+    --highlight-comment: #8b949e;
+    --highlight-red: #ff7b72;
+    --highlight-orange: #ffa657;
+    --highlight-yellow: #ffcc66;
+    --highlight-green: #7ee787;
+    --highlight-aqua: #a5d6ff;
+    --highlight-blue: #79c0ff;
+    --highlight-purple: #d2a8ff;
+    --highlight-deletion: #ffa198;
+    --highlight-deletion-bg: #490202;
+    --highlight-addition: #7ee787;
+    --highlight-addition-bg: #04260f;
+    --color-info-bg: rgba(59, 130, 246, 0.12);
+    --color-info-text: #93c5fd;
+    --color-info-shadow: rgba(59, 130, 246, 0.06);
+    --color-warning-bg: rgba(245, 158, 11, 0.12);
+    --color-warning-text: #fcd34d;
+    --color-warning-shadow: rgba(245, 158, 11, 0.06);
+    --color-danger-bg: rgba(239, 68, 68, 0.12);
+    --color-danger-text: #fca5a5;
+    --color-danger-shadow: rgba(239, 68, 68, 0.06);
+    --color-tip-bg: rgba(34, 197, 94, 0.12);
+    --color-tip-text: #86efac;
+    --color-tip-shadow: rgba(34, 197, 94, 0.06);
+    --color-important-bg: rgba(139, 92, 246, 0.12);
+    --color-important-text: #c4b5fd;
+    --color-important-shadow: rgba(139, 92, 246, 0.06);
+  }
+  [data-theme='dark']:root {
+    --color-wrap: rgba(32, 38, 50, 0.6);
+    --color-background: #0a0c10;
+    --color-default: #c9cdd4;
+    --color-footer-background: rgba(10, 12, 16, 0.6);
+    --color-mobile-nav-background: rgba(12, 14, 19, 0.92);
+    --color-header-background: rgba(10, 12, 16, 0.7);
+    --color-h2-border: rgba(255, 255, 255, 0.08);
+    --color-hover-shadow: rgba(0, 0, 0, 0.45);
+    --color-code-background: rgba(255, 255, 255, 0.05);
+    --color-archive-year: #9aa0a8;
+    --color-sticky: rgba(57, 197, 187, 0.12);
+    --grey-9: #9aa0a8;
+  }
+  #header-nav,
+  #header-nav:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .post-wrap,
+  .article-inner,
+  .widget-wrap,
+  .archive-wrap,
+  .comment {
+    border: 1px solid rgba(57, 197, 187, 0.14);
+  }
+  .main-nav-link-wrap:hover .main-nav-link {
+    color: #eafffb !important;
+    text-shadow: 0 0 8px rgba(57, 197, 187, 0.85);
+    opacity: 1 !important;
+  }
+  #subtitle {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-style: italic !important;
+    color: #39C5BB !important;
+    font-size: 22px !important;
+    margin-top: 16px !important;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  }
+  .post-categories-cover h2,
+  .post-categories-cover h3 {
+    color: #39C5BB !important;
+  }
+  .article-entry {
+    font-family: 'Times New Roman', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif !important;
+  }
+  #header > img,
+  #header picture img {
+    filter: brightness(0.5) saturate(1.2) contrast(1.12);
+  }
+</style>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
   <body>
@@ -84,7 +183,7 @@
            M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
           </svg>
       </div>
-      <div class="loading-word">Loading...</div>
+      <div class="loading-word">少女计算中...</div>
     </div>
   </div>
   <script>
@@ -124,39 +223,21 @@
         <div id="header-nav">
   <nav id="main-nav" aria-label="Primary navigation">
         <a class="main-nav-link-wrap" href="/">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
-            </div>
           <span class="main-nav-link">Home</span>
         </a>
         <a class="main-nav-link-wrap" href="/archives">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
-            </div>
           <span class="main-nav-link">Archives</span>
         </a>
         <a class="main-nav-link-wrap" href="/categories">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
-            </div>
           <span class="main-nav-link">Categories</span>
         </a>
         <a class="main-nav-link-wrap" href="/diary">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
-            </div>
           <span class="main-nav-link">diary</span>
         </a>
         <a class="main-nav-link-wrap" href="/about">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
-            </div>
           <span class="main-nav-link">About</span>
         </a>
         <a class="main-nav-link-wrap" href="/friend">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
-            </div>
           <span class="main-nav-link">Friend</span>
         </a>
     <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
@@ -169,7 +250,7 @@
 <header id="header" aria-label="Site header">
       <picture>
       </picture>
-        <img  fetchpriority="high" src="/images/banner.webp" alt="">
+        <img  fetchpriority="high" src="/images/banner.png" alt="">
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
@@ -214,44 +295,26 @@
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Home</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Archives</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/categories" aria-label="Categories"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Categories</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/diary" aria-label="diary"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">diary</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">About</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Friend</div>
       </div>
 </div>
@@ -263,7 +326,7 @@
     <div class="widget-wrap" data-aos="fade-up">
       <h3 class="widget-title">Categories</h3>
       <div class="widget">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tutorial/" title="tutorial">tutorial</a></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/" title="Test">Test</a></li></ul>
       </div>
     </div>
   </div>
@@ -326,7 +389,7 @@
 </div>
 <div class="category-wrap">
     <div class="archives-category-list-item" data-aos="zoom-in">
-      <a class="archives-category-list-link" href="/categories/tutorial/">tutorial</a>
+      <a class="archives-category-list-link" href="/categories/Test/">Test</a>
     </div>
 </div>
         <section class="archives-wrap" data-aos="fade-up">
@@ -366,7 +429,7 @@
       </div>
       <div>
         <span class="icon-brush"></span>
-        260
+        265
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         00:03
@@ -416,44 +479,26 @@
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Home</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Archives</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/categories" aria-label="Categories"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Categories</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/diary" aria-label="diary"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">diary</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">About</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
-          </div>
         <div class="sidebar-menu-link">Friend</div>
       </div>
 </div>

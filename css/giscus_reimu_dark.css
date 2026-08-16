@@ -4,14 +4,14 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap");
 main {
-  --red-0: #ff0000;
-  --red-1: #ff5252;
-  --red-2: #ff7c7c;
-  --red-3: #ffafaf;
-  --red-4: #ffd0d0;
-  --red-5: #ffecec;
-  --red-5-5: #fff3f3;
-  --red-6: #fff7f7;
+  --red-0: #0e8a80;
+  --red-1: #39C5BB;
+  --red-2: #5ad4cb;
+  --red-3: #8fe3dc;
+  --red-4: #b7efe9;
+  --red-5: #d8f7f4;
+  --red-5-5: #eafbf9;
+  --red-6: #f4fdfc;
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;
   --color-prettylights-syntax-entity: #d2a8ff;
