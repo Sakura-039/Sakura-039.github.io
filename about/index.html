@@ -1,6 +1,24 @@
   <!DOCTYPE html>
   <html lang="en"  data-theme-mode="auto">
   <head>
+    <script>
+  (function () {
+    var origFetch = window.fetch;
+    window.fetch = function (url, options) {
+      var u = typeof url === 'string' ? url : (url && url.url) || '';
+      if (u.indexOf('meting') === -1) return origFetch.apply(this, arguments);
+      return origFetch.apply(this, arguments).then(function (resp) {
+        return resp.clone().text().then(function (text) {
+          var t = text.trim();
+          if (t.charAt(0) !== '[' && t.charAt(0) !== '{') {
+            return new Response('[]', { status: 200, headers: { 'Content-Type': 'application/json' } });
+          }
+          return resp;
+        });
+      });
+    };
+  })();
+</script>
   <meta charset="utf-8">
   
   
@@ -34,13 +52,13 @@
 <link rel="stylesheet" href="/css/style.css">
 
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+      <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/katex.min.css" integrity="sha384-nH0MfJ44wi1dd7w6jinlyBgljjS8EJAh2JBoRad8a3VDw2K69vfaaqm4WnR+gXtA" crossorigin="anonymous">
     
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
 
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.3/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
 
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/APlayer.min.css" integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU/voDBY5XE2lVh" crossorigin="anonymous">
     <style>
   @font-face {
     font-family: 'Playfair Italic';
@@ -127,6 +145,12 @@
             </div>
           <span class="main-nav-link">Categories</span>
         </a>
+        <a class="main-nav-link-wrap" href="/diary">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">diary</span>
+        </a>
         <a class="main-nav-link-wrap" href="/about">
             <div class="main-nav-icon icon rotate">
                 &#xe62b;
@@ -164,22 +188,6 @@
         <div id="content" aria-label="Page content"  class="sidebar-right" >
           <aside id="sidebar" aria-label="Sidebar">
   <div class="sidebar-wrapper-container ">
-      <meting-js
-        theme="var(--color-link)"
-        id="18262600314"
-        server="netease"
-        type="playlist"
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      ></meting-js>
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="fade-up">
         <div class="sidebar-author">
@@ -190,7 +198,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
@@ -198,7 +206,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>Tag</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -227,6 +235,13 @@
               &#xe62b;
           </div>
         <div class="sidebar-menu-link">Categories</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/diary" aria-label="diary"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">diary</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
@@ -260,7 +275,7 @@
     <div class="widget-wrap" data-aos="fade-up">
       <h3 class="widget-title">Tags</h3>
       <div class="widget">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag" title="hexo">hexo</a></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag" title="hexo">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag" title="test">test</a></li></ul>
       </div>
     </div>
   </div>
@@ -269,7 +284,7 @@
     <div class="widget-wrap" data-aos="fade-up">
       <h3 class="widget-title">Tag Cloud</h3>
       <div class="widget tagcloud">
-        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
       </div>
     </div>
   </div>
@@ -288,6 +303,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <div class="widget">
         <ul>
+            <li>
+              <a href="/2026/08/16/math-test/" title="Math Test v3">Math Test v3</a>
+            </li>
             <li>
               <a href="/2026/08/14/hello-world/" title="Hello World">Hello World</a>
             </li>
@@ -378,10 +396,10 @@
       </div>
       <div>
         <span class="icon-brush"></span>
-        75
+        260
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:01
+        00:03
       </div>
       <div>
         <span class="icon-eye"></span>
@@ -409,7 +427,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
@@ -417,7 +435,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>Tag</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -446,6 +464,13 @@
               &#xe62b;
           </div>
         <div class="sidebar-menu-link">Categories</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/diary" aria-label="diary"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">diary</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
@@ -847,32 +872,69 @@
   }
 </script>
 
-
-    <script>
-      var setupAPlayer = () => {
-        if (!false || !window.matchMedia('(max-width: 768px)').matches) {
-          if (window.matchMedia('(max-width: 959px)').matches) {
-            const meting = _$('meting-js');
-            if (meting) {
-              meting.setAttribute('fixed', 'true');
-              const aside = meting.parentNode?.parentNode;
-              if (aside?.tagName === 'ASIDE') {
-                meting.parentNode.removeChild(meting);
-                document.body.appendChild(meting);
-              }
-            }
+    <script data-pjax>
+      var __katexTagOverflowHandler;
+      if (__katexTagOverflowHandler) {
+        window.removeEventListener("resize", __katexTagOverflowHandler);
+      }
+      __katexTagOverflowHandler = function() {
+        _$$(".katex-display").forEach(function(elem) {
+          var ts = elem.querySelectorAll(".tag");
+          var eqns = elem.querySelectorAll(".base");
+          if (ts.length === 0 || eqns.length === 0) return;
+          var t = ts[0];
+          var lastEqn = eqns[eqns.length - 1];
+          var firstEqn = eqns[0];
+          if (lastEqn.getBoundingClientRect().right > t.getBoundingClientRect().left) {
+            t.classList.add("tag-overflowed");
+          } else if (firstEqn.getBoundingClientRect().left - elem.getBoundingClientRect().left >= t.offsetWidth / 2) {
+            t.classList.remove("tag-overflowed");
           }
-        }
+        });
       };
-        var meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+      window.addEventListener("resize", __katexTagOverflowHandler);
+      window.katexTagOverflowHandler = __katexTagOverflowHandler;
     </script>
-  
-<script src="/js/APlayer.min.js" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
+      <script>
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", katexTagOverflowHandler, { once: true });
+        } else {
+          katexTagOverflowHandler();
+        }
+      </script>
 
-    
-<script src="/js/Meting.min.js" crossorigin="anonymous" defer></script>
 
 
-
+      <script>
+  (function () {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/css/APlayer.min.css';
+    document.head.appendChild(link);
+    var s = document.createElement('script');
+    s.src = '/js/APlayer.min.js';
+    s.onload = function () {
+      fetch('/music.json')
+        .then(function (r) { return r.json(); })
+        .then(function (list) {
+          if (!list || !list.length) return;
+          var div = document.createElement('div');
+          document.body.appendChild(div);
+          window.sitePlayer = new APlayer({
+            container: div,
+            audio: list,
+            fixed: true,
+            autoplay: false,
+            order: 'list',
+            preload: 'auto',
+            listFolded: false,
+            lrcType: 0
+          });
+        })
+        .catch(function () {});
+    };
+    document.body.appendChild(s);
+  })();
+</script>
   </body>
   </html>
