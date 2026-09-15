@@ -1,0 +1,213 @@
+/* ============================================================
+   APlayer 皮肤 —— 暗色玻璃拟态 · Miku 青绿 (#39C5BB)
+   与博客整体风格对齐；由 _config.reimu.yml 的 body_end 注入脚本
+   在 APlayer.min.css 之后加载（同优先级时后加载者生效）
+   ============================================================ */
+
+/* ---------- 悬浮卡片（左下角，避开右下角回到顶部按钮） ---------- */
+.aplayer.aplayer-fixed {
+  left: 18px;
+  right: auto;
+  bottom: 18px;
+  width: 360px;
+  max-width: calc(100vw - 36px);
+}
+
+.aplayer.aplayer-fixed .aplayer-body {
+  left: 18px;
+  right: auto;
+  bottom: 18px;
+  width: 360px;
+  max-width: calc(100vw - 36px);
+  border: 1px solid rgba(57, 197, 187, 0.28);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(20, 25, 33, 0.78);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.5), 0 0 18px rgba(57, 197, 187, 0.07);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aplayer.aplayer-fixed .aplayer-body:hover {
+  border-color: rgba(57, 197, 187, 0.5);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55), 0 0 26px rgba(57, 197, 187, 0.16);
+}
+
+/* ---------- 封面区：无封面时呈现青绿渐变 + 音符 ---------- */
+.aplayer .aplayer-pic {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eafffb' fill-opacity='0.5'%3E%3Cpath d='M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z'/%3E%3C/svg%3E"),
+    linear-gradient(140deg, rgba(57, 197, 187, 0.5) 0%, rgba(18, 26, 32, 0.86) 48%, rgba(10, 13, 18, 0.94) 100%);
+  background-size: 26px 26px, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.aplayer .aplayer-pic .aplayer-button {
+  background: rgba(10, 13, 18, 0.35);
+  box-shadow: none;
+}
+
+.aplayer .aplayer-pic .aplayer-play,
+.aplayer .aplayer-pic .aplayer-pause {
+  border-color: rgba(234, 251, 249, 0.9);
+}
+
+.aplayer .aplayer-pic .aplayer-button:hover {
+  background: rgba(57, 197, 187, 0.35);
+  box-shadow: 0 0 12px rgba(57, 197, 187, 0.55);
+}
+
+/* ---------- 曲目文字 ---------- */
+.aplayer .aplayer-info .aplayer-music .aplayer-title {
+  color: #e8f1f5;
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+  color: rgba(201, 205, 212, 0.6);
+}
+
+/* ---------- 进度条 ---------- */
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 2px;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  border-radius: 2px;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
+  box-shadow: 0 0 8px rgba(57, 197, 187, 0.85);
+}
+
+/* ---------- 时间与图标 ---------- */
+.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  color: rgba(201, 205, 212, 0.6);
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+  fill: rgba(201, 205, 212, 0.72);
+  transition: fill 0.2s ease;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
+  fill: #39C5BB;
+}
+
+/* ---------- 收起按钮（右侧竖条） ---------- */
+.aplayer .aplayer-miniswitcher {
+  background: rgba(57, 197, 187, 0.1);
+  border-radius: 0 13px 13px 0;
+}
+
+.aplayer .aplayer-miniswitcher .aplayer-icon path {
+  fill: rgba(201, 205, 212, 0.72);
+  transition: fill 0.2s ease;
+}
+
+.aplayer .aplayer-miniswitcher .aplayer-icon:hover path {
+  fill: #39C5BB;
+}
+
+/* ---------- 音量条 ---------- */
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* ---------- 播放列表面板 ---------- */
+.aplayer.aplayer-fixed .aplayer-list {
+  margin-bottom: 76px;
+  border: 1px solid rgba(57, 197, 187, 0.22);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(18, 23, 30, 0.88);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(57, 197, 187, 0.4) transparent;
+}
+
+.aplayer .aplayer-list ol::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(57, 197, 187, 0.35);
+}
+
+.aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(57, 197, 187, 0.6);
+}
+
+.aplayer .aplayer-list ol li {
+  height: 34px;
+  line-height: 34px;
+  color: rgba(201, 205, 212, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease;
+}
+
+.aplayer .aplayer-list ol li:first-child {
+  border-top: none;
+}
+
+.aplayer .aplayer-list ol li:hover {
+  background: rgba(57, 197, 187, 0.08);
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+  background: rgba(57, 197, 187, 0.15);
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-title {
+  color: #eafffb;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-cur {
+  border-radius: 0 2px 2px 0;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-index {
+  color: rgba(201, 205, 212, 0.45);
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-author {
+  color: rgba(201, 205, 212, 0.5);
+}
+
+/* ---------- 鼠标指针（沿用博客自定义光标） ---------- */
+.aplayer-pic,
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap,
+.aplayer-list-cur,
+.aplayer-list-index,
+.aplayer-list-author,
+.aplayer .aplayer-list ol li,
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap,
+.aplayer-thumb,
+.aplayer-icon {
+  cursor: var(--cursor-pointer, pointer) !important;
+}
+
+.aplayer-music {
+  cursor: var(--cursor-default, auto) !important;
+}
+
+/* ---------- 窄屏适配 ---------- */
+@media (max-width: 600px) {
+  .aplayer.aplayer-fixed,
+  .aplayer.aplayer-fixed .aplayer-body {
+    left: 10px;
+    right: auto;
+    bottom: 10px;
+    width: calc(100vw - 20px);
+  }
+
+  .aplayer.aplayer-fixed .aplayer-list {
+    margin-bottom: 74px;
+  }
+}
