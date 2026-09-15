@@ -43,12 +43,12 @@
   --highlight-deletion-bg: #ffeef0;
   --highlight-addition: #22863a;
   --highlight-addition-bg: #f0fff4;
-  --cursor-default: url("../images/cursor/mouse-cursor-default.png?v=mu2iwe0x"), auto;
-  --cursor-pointer: url("../images/cursor/mouse-cursor-pointer.png?v=mu2iwe0x"), pointer;
-  --cursor-text: url("../images/cursor/mouse-cursor-text.png?v=mu2iwe0x"), text;
-  --footer-icon: url("../images/taichi.png?v=mu2iwe0x");
-  --sponsor-icon: url("../images/taichi.png?v=mu2iwe0x");
-  --top-icon: url("../images/taichi.png?v=mu2iwe0x");
+  --cursor-default: url("../images/cursor/mouse-cursor-default.png?v=mu2t66ep"), auto;
+  --cursor-pointer: url("../images/cursor/mouse-cursor-pointer.png?v=mu2t66ep"), pointer;
+  --cursor-text: url("../images/cursor/mouse-cursor-text.png?v=mu2t66ep"), text;
+  --footer-icon: url("../images/taichi.png?v=mu2t66ep");
+  --sponsor-icon: url("../images/taichi.png?v=mu2t66ep");
+  --top-icon: url("../images/taichi.png?v=mu2t66ep");
   --shadow-meta: 0 0 5px 2px var(--color-meta-shadow);
   --shadow-meta-hover: 0 0 6px 4px var(--color-meta-shadow);
   --shadow-card: 0 0 10px 2px var(--color-hover-shadow);
@@ -259,7 +259,7 @@ body [data-aos='zoom-in'] {
 }
 @font-face {
   font-family: 'iconfont';
-  src: url("//at.alicdn.com/t/c/font_4552607_ex15nbittbh.woff2?v=mu2iwe0x") format('woff2');
+  src: url("//at.alicdn.com/t/c/font_4552607_ex15nbittbh.woff2?v=mu2t66ep") format('woff2');
   font-display: swap;
 }
 .archives-tag-list-link:before {
